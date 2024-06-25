@@ -4,6 +4,7 @@ import com.github.javafaker.Faker;
 import edu.utvt.attendance.persistence.common.StudentType;
 import edu.utvt.attendance.persistence.entities.Student;
 import edu.utvt.attendance.persistence.repositories.StudentRepository;
+import edu.utvt.attendance.persistence.repositories.TeacherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -23,6 +24,9 @@ public class CustomerResApiAApplication implements CommandLineRunner  {
 
     @Autowired
     private StudentRepository repository;
+
+    @Autowired
+    private TeacherRepository teacherRepository;
 
     public static void main(String[] args) {
         SpringApplication.run(CustomerResApiAApplication.class, args);
@@ -48,4 +52,6 @@ public class CustomerResApiAApplication implements CommandLineRunner  {
         }
         this.repository.saveAll(students);
     }
+
+
 }
